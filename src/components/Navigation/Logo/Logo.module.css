@@ -1,0 +1,25 @@
+.Logo {
+  margin: 4px;
+  height: 110%;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.Logo img {
+  height: 100%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .Logo {
+    margin: 4px 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .Logo {
+    margin: 4px 80px;
+  }
+}

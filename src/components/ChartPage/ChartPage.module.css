@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.MarketContainer {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 0.3fr 5fr 1.5fr;
+  grid-template-rows: 1fr 4.5fr 0.3fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.ChartZone {
+  grid-area: 2 / 2 / 3 / 3;
+
+  max-height: 500px;
+}
+
+.ChartZone h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+
+  margin-left: 2.5em;
+}
+
+.ChartZone h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+
+  margin-left: 3.2em;
+}
+
+.LeftContainer {
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.InfoContainer {
+  grid-area: 1 / 3 / 4 / 4;
+
+  background-color: rgb(247, 218, 218);
+}
+
+.HttpError {
+  text-align: center;
+  color: red;
+
+  font-size: large;
+}
+
+.InfoZone {
+  grid-area: 2 / 3 / 3 / 4;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+}
+
+.Footer {
+  grid-area: 3 / 1 / 4 / 4;
+
+  background-color: #212228;
+}
+
+@media (max-width: 1100px) {
+  .MarketContainer {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 5fr 1.5fr;
+    grid-template-rows: 1.3fr 5fr 0.5fr;
+  }
+
+  .LeftContainer {
+    opacity: 0;
+  }
+
+  .ChartZone {
+    grid-area: 2 / 1 / 3 / 2;
+
+    max-height: 450px;
+  }
+
+  .InfoContainer {
+    grid-area: 1 / 2 / 4 / 3;
+  }
+
+  .InfoZone {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+@media (max-width: 700px) {
+  .ChartZone h1 {
+    margin-top: 1.5em;
+  }
+
+  .MarketContainer {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 1fr 5fr 0.5fr;
+  }
+
+  .ChartZone {
+    grid-area: 3 / 1 / 4 / 2;
+
+    max-height: 300px;
+  }
+
+  .InfoContainer {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .InfoZone {
+    grid-area: 2 / 1 / 3 / 2;
+
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 500px) {
+  .MarketContainer {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 2fr 5fr 0.5fr;
+    gap: 0;
+  }
+
+  .ChartZone {
+    grid-area: 3 / 1 / 4 / 2;
+
+    background-color: white;
+
+    max-height: 300px;
+  }
+
+  .InfoContainer {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .InfoZone {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .Footer {
+    grid-area: 4 / 1 / 5 / 2;
+    background-color: black;
+  }
+}

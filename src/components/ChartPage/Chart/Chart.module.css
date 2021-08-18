@@ -1,0 +1,56 @@
+.Tooltip {
+  border-radius: 0.25rem;
+  background-color: #26313c;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 15px 30px 45px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.Chart {
+  position: relative;
+  left: 3rem;
+
+  height: 90%;
+  width: 90%;
+}
+
+.Ticks {
+  font-size: 1em;
+}
+
+.LoadingSpinner {
+  position: absolute;
+  left: 40%;
+  top: 57%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 900px) {
+  .Chart {
+    height: 75%;
+  }
+
+  .LoadingSpinner {
+    left: 33%;
+  }
+}
+
+@media (max-width: 700px) {
+  .LoadingSpinner {
+    top: 60%;
+    left: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .Chart {
+    height: 65%;
+
+    left: 1.5rem;
+  }
+
+  .LoadingSpinner {
+    top: 62%;
+  }
+}

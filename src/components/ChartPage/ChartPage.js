@@ -110,9 +110,9 @@ const MarketChart = () => {
       setIsLoading(false);
     };
 
-    // fetchChart().catch(error => {
-    //   setHttpError(true);
-    // });
+    fetchChart().catch(error => {
+      setHttpError(true);
+    });
   }, [currStock, currTimeRange]);
 
   const selectOption = (option, type) => {

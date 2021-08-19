@@ -37,7 +37,7 @@
 .InfoContainer {
   grid-area: 1 / 3 / 4 / 4;
 
-  background-color: rgb(247, 218, 218);
+  background-color: #dcdcc6;
 }
 
 .HttpError {

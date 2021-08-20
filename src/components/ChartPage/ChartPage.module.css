@@ -41,18 +41,17 @@
 }
 
 .HttpError {
-  text-align: center;
-  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  font-size: large;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
 }
 
 .InfoZone {
   grid-area: 2 / 3 / 3 / 4;
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around; */
 }
 
 .Footer {

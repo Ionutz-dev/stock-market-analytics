@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import { useSelector } from 'react-redux';
 
 import classes from './Chart.module.css';
 
@@ -28,8 +29,12 @@ const months = [
   'December',
 ];
 
-const Chart = props => {
-  if (!props.data) {
+const Chart = () => {
+  const chartData = useSelector(state => state.chart.chartData);
+  const timestamps = useSelector(state => state.chart.timestamps);
+  const range = useSelector(state => state.chart.currTimeRange.range);
+
+  if (chartData.length === 0 || timestamps.length === 0) {
     return (
       <div className={classes.LoadingSpinner}>
         <LoadingSpinner />
@@ -42,7 +47,7 @@ const Chart = props => {
       <AreaChart
         width={500}
         height={400}
-        data={props.data}
+        data={chartData}
         margin={{
           top: 33,
           right: 27,
@@ -70,12 +75,7 @@ const Chart = props => {
           dataKey="date"
           axisLine={false}
           tickLine={false}
-          tick={
-            <CustomXAxisTick
-              dateRange={props.timeRange}
-              timestamps={props.timestamps}
-            />
-          }
+          tick={<CustomXAxisTick dateRange={range} timestamps={timestamps} />}
           interval={0}
         />
 
@@ -90,7 +90,7 @@ const Chart = props => {
           interval={0}
         />
 
-        <Tooltip content={<CustomTooltip range={props.timeRange} />} />
+        <Tooltip content={<CustomTooltip range={range} />} />
       </AreaChart>
     </ResponsiveContainer>
   );
@@ -99,9 +99,6 @@ const Chart = props => {
 const CustomXAxisTick = props => {
   const { x, y, payload, dateRange: range, timestamps } = props;
   const { value: valueOfDate, index } = payload;
-
-  console.log(payload);
-  console.log(timestamps);
 
   let day = '',
     prevMonth = '',

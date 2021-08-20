@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import {
+  changeCurrStock,
+  changeCurrRange,
+} from '../../../store/chartData-actions';
 
 import classes from './SelectMenu.module.css';
 
@@ -8,6 +14,8 @@ const SelectMenu = props => {
     props.title === 'Stock' ? 'AAPL' : '1mo'
   );
 
+  const dispatch = useDispatch();
+
   const toggleOpenHandler = () => {
     setOpen(!open);
   };
@@ -16,25 +24,41 @@ const SelectMenu = props => {
     setSelected(option);
 
     if (props.title === 'Range') {
-      props.onSelectOption(option);
+      let range = option,
+        interval = '1d';
+      if (range === '1d') interval = '15m';
+
+      dispatch(changeCurrRange({ range: range, interval: interval }));
     }
 
     if (props.title === 'Stock') {
-      if (option === 'AAPL')
-        props.onSelectOption({ name: 'Apple', symbol: option }, props.title);
-      else if (option === 'FB')
-        props.onSelectOption({ name: 'Facebook', symbol: option }, props.title);
-      else if (option === 'AMZN')
-        props.onSelectOption({ name: 'Amazon', symbol: option }, props.title);
-      else if (option === 'NFLX')
-        props.onSelectOption({ name: 'Netflix', symbol: option }, props.title);
-      else if (option === 'GOOGL')
-        props.onSelectOption(
-          { name: 'Alphabet', symbol: 'GOOGL' },
-          props.title
-        );
-      else if (option === 'TSLA')
-        props.onSelectOption({ name: 'Tesla', symbol: 'TSLA' }, props.title);
+      let name = '',
+        symbol = '';
+
+      if (option === 'AAPL') {
+        name = 'Apple';
+        symbol = option;
+      } else if (option === 'FB') {
+        name = 'Facebook';
+        symbol = option;
+      } else if (option === 'AMZN') {
+        name = 'Amazon';
+        symbol = option;
+      } else if (option === 'NFLX') {
+        name = 'Netflix';
+        symbol = option;
+      } else if (option === 'GOOGL') {
+        name = 'Alphabet';
+        symbol = option;
+      } else if (option === 'TSLA') {
+        name = 'Tesla';
+        symbol = option;
+      } else if (option === 'MSFT') {
+        name = 'Microsoft';
+        symbol = option;
+      }
+
+      dispatch(changeCurrStock({ stockName: name, stockSymbol: symbol }));
     }
   };
 

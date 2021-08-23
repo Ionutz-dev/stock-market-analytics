@@ -2,7 +2,11 @@ import React from 'react';
 
 import classes from './ToogleBtn.module.css';
 
-const toggleBtn = props => (
+interface propsType {
+  clicked(): void;
+}
+
+const toggleBtn = (props: propsType) => (
   <div onClick={props.clicked} className={classes.ToggleBtn}>
     <div></div>
     <div></div>

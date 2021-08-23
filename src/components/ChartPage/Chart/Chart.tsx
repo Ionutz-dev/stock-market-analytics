@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   AreaChart,
   Area,
@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { useSelector } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks';
 
 import classes from './Chart.module.css';
 
@@ -30,9 +30,9 @@ const months = [
 ];
 
 const Chart = () => {
-  const chartData = useSelector(state => state.chart.chartData);
-  const timestamps = useSelector(state => state.chart.timestamps);
-  const range = useSelector(state => state.chart.currTimeRange.range);
+  const chartData = useAppSelector(state => state.chart.chartData);
+  const timestamps = useAppSelector(state => state.chart.timestamps);
+  const range = useAppSelector(state => state.chart.currTimeRange.range);
 
   if (chartData.length === 0 || timestamps.length === 0) {
     return (
@@ -80,7 +80,7 @@ const Chart = () => {
         />
 
         <YAxis
-          data="value"
+          dataKey="value"
           axisLine={true}
           tickLine={false}
           tickCount={4}
@@ -96,15 +96,17 @@ const Chart = () => {
   );
 };
 
-const CustomXAxisTick = props => {
+const CustomXAxisTick = (props: any) => {
   const { x, y, payload, dateRange: range, timestamps } = props;
   const { value: valueOfDate, index } = payload;
 
-  let day = '',
-    prevMonth = '',
-    month = '',
-    prevYear = '',
-    year = '';
+  console.log(props);
+
+  let day: number = 0,
+    prevMonth: number = 0,
+    month: number = 0,
+    prevYear: number = 0,
+    year: number = 0;
 
   if (range !== '1d') {
     day = timestamps[0][index];
@@ -116,13 +118,13 @@ const CustomXAxisTick = props => {
     year = timestamps[2][index];
   }
 
-  let date = '';
+  let date: string = '';
 
   if (range === '5y') {
-    if (year !== prevYear) date = year;
+    if (year !== prevYear) date = String(year);
   } else if (range === '1y') {
     if (month !== prevMonth && month % 2 !== 0) {
-      if (month === 1) date = year;
+      if (month === 1) date = String(year);
       else date = `${months[month - 1].split('').splice(0, 3).join('')}`;
     }
   } else if (range === '6mo') {
@@ -146,13 +148,13 @@ const CustomXAxisTick = props => {
   );
 };
 
-const CustomYAxisTick = props => {
+const CustomYAxisTick = (props: any) => {
   const { x, y, index, payload } = props;
 
   const price = payload.value.toFixed(2);
 
   if (index === 0) {
-    return '';
+    return <Fragment>''</Fragment>;
   }
 
   return (
@@ -164,7 +166,7 @@ const CustomYAxisTick = props => {
   );
 };
 
-const CustomTooltip = ({ active, payload, label, range }) => {
+const CustomTooltip = ({ active, payload, label, range }: any) => {
   if (active) {
     let date = '';
 
@@ -177,9 +179,9 @@ const CustomTooltip = ({ active, payload, label, range }) => {
 
       let month = 'Jan';
       if (dateArr[1][0] === '0') {
-        month = months[dateArr[1][1] - 1];
+        month = months[Number(dateArr[1][1]) - 1];
       } else {
-        month = months[dateArr[1] - 1];
+        month = months[Number(dateArr[1]) - 1];
       }
 
       const year = dateArr[0];

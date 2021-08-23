@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+
+import classes from './ChartPage.module.css';
 
 import Chart from './Chart/Chart';
 import SelectMenu from './SelectMenu/SelectMenu';
 
-import classes from './ChartPage.module.css';
-
 import { fetchChartData } from '../../store/chartData-actions';
 
 const MarketChart = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const currStock = useSelector(state => state.chart.currStock);
-  const currTimeRange = useSelector(state => state.chart.currTimeRange);
-  const stockPrice = useSelector(state => state.chart.stockPrice);
-  const isLoading = useSelector(state => state.chart.isLoading);
-  const error = useSelector(state => state.chart.error);
+  const currStock = useAppSelector(state => state.chart.currStock);
+  const currTimeRange = useAppSelector(state => state.chart.currTimeRange);
+  const stockPrice = useAppSelector(state => state.chart.stockPrice);
+  const isLoading = useAppSelector(state => state.chart.isLoading);
+  const error = useAppSelector(state => state.chart.error);
 
   useEffect(() => {
-    dispatch(fetchChartData({ currStock, currTimeRange }));
+    // dispatch(fetchChartData({ currStock, currTimeRange }));
   }, [dispatch, currStock, currTimeRange]);
 
   let content = (

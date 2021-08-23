@@ -5,7 +5,11 @@ import classes from './Layout.module.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
-function Layout(props) {
+interface propsType {
+  children: React.ReactNode;
+}
+
+const Layout = (props: propsType) => {
   const [showSideDrawer, setShowSideDrawer] = useState(false);
 
   const sideDrawerClosedHandler = () => {
@@ -23,6 +27,6 @@ function Layout(props) {
       <main className={classes.Content}>{props.children}</main>
     </div>
   );
-}
+};
 
 export default Layout;

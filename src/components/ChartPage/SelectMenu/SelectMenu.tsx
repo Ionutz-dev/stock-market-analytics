@@ -8,7 +8,12 @@ import {
 
 import classes from './SelectMenu.module.css';
 
-const SelectMenu = props => {
+interface typeOfProps {
+  title: string;
+  options: string[];
+}
+
+const SelectMenu = (props: typeOfProps) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(
     props.title === 'Stock' ? 'AAPL' : '1mo'
@@ -20,7 +25,7 @@ const SelectMenu = props => {
     setOpen(!open);
   };
 
-  const selectHandler = option => {
+  const selectHandler = (option: string) => {
     setSelected(option);
 
     if (props.title === 'Range') {

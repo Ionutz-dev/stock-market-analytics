@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './LandingPage.module.css';
 
-const landingPage = props => {
+const landingPage = () => {
   return (
     <div className={classes['Background-Container']}>
       <div className={classes.Background}></div>
@@ -13,7 +13,7 @@ const landingPage = props => {
             <div
               style={{
                 color: '#CDCDCD',
-                fontWeight: '700',
+                fontWeight: 700,
                 textAlign: 'left',
               }}
             >

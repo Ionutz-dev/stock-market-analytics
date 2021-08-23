@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './LoadingSpinner.module.css';
 
-const loadingSpinner = props => (
+const loadingSpinner = () => (
   <div className={classes['lds-default']}>
     <div></div>
     <div></div>

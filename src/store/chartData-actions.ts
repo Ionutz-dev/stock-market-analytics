@@ -1,12 +1,20 @@
 import axios from 'axios';
+import { AnyAction } from 'redux';
+import { RootState } from './index';
+import { ThunkAction } from 'redux-thunk';
+
 import { chartActions } from './chartData-slice';
 
-export const fetchChartData = fetchInfo => {
-  return async dispatch => {
+export const fetchChartData =
+  (fetchInfo: {
+    currStock: { name: string; symbol: string };
+    currTimeRange: { range: string; interval: string };
+  }): ThunkAction<void, RootState, unknown, AnyAction> =>
+  async dispatch => {
     const fetchData = async () => {
       const { currStock, currTimeRange } = fetchInfo;
 
-      const options = {
+      const response = await axios.request({
         method: 'GET',
         url: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-charts',
         params: {
@@ -21,9 +29,7 @@ export const fetchChartData = fetchInfo => {
             '41f084f51cmsh2fce017f88a0c79p175ce0jsn2d11f1030e8c',
           'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
         },
-      };
-
-      const response = await axios.request(options);
+      });
 
       if (response.statusText !== 'OK') {
         throw new Error("Chart data couldn' t be fetched");
@@ -88,7 +94,7 @@ export const fetchChartData = fetchInfo => {
       return {
         stockPrice: prices[prices.length - 1],
         chartData: chartData,
-        timestamps: [days, months, years],
+        timeData: [days, months, years],
       };
     };
 
@@ -102,7 +108,7 @@ export const fetchChartData = fetchInfo => {
       );
       dispatch(
         chartActions.setTimestamps({
-          timestamps: data.timestamps,
+          timestamps: data.timeData,
         })
       );
       dispatch(
@@ -123,9 +129,11 @@ export const fetchChartData = fetchInfo => {
       );
     }
   };
-};
 
-export const changeCurrStock = stockData => {
+export const changeCurrStock = (stockData: {
+  stockName: string;
+  stockSymbol: string;
+}): ThunkAction<void, RootState, unknown, AnyAction> => {
   return dispatch => {
     dispatch(
       chartActions.setCurrStock({
@@ -146,7 +154,10 @@ export const changeCurrStock = stockData => {
   };
 };
 
-export const changeCurrRange = timeData => {
+export const changeCurrRange = (timeData: {
+  range: string;
+  interval: string;
+}): ThunkAction<void, RootState, unknown, AnyAction> => {
   return dispatch => {
     dispatch(
       chartActions.setCurrTimeRange({

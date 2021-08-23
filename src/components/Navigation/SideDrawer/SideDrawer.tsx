@@ -4,7 +4,12 @@ import classes from './SideDrawer.module.css';
 
 import { NavLink } from 'react-router-dom';
 
-const sideDrawer = props => {
+interface propsType {
+  open: boolean;
+  closed(): void;
+}
+
+const sideDrawer = (props: propsType) => {
   let attachedClasses = [classes.sidenav, classes.Closed];
 
   if (props.open) {

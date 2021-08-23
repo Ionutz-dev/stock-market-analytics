@@ -5,7 +5,11 @@ import Logo from '../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import ToggleBtn from '../SideDrawer/ToogleBtn/ToogleBtn';
 
-const toolbar = props => (
+interface propsType {
+  drawerHandler(): void;
+}
+
+const toolbar = (props: propsType) => (
   <header className={classes.Toolbar}>
     <ToggleBtn clicked={props.drawerHandler} />
     <div className={classes.Logo}>

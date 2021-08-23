@@ -100,8 +100,6 @@ const CustomXAxisTick = (props: any) => {
   const { x, y, payload, dateRange: range, timestamps } = props;
   const { value: valueOfDate, index } = payload;
 
-  console.log(props);
-
   let day: number = 0,
     prevMonth: number = 0,
     month: number = 0,

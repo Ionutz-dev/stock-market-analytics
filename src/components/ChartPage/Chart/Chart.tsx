@@ -80,7 +80,7 @@ const Chart = () => {
         />
 
         <YAxis
-          dataKey="value"
+          dataKey="price"
           axisLine={true}
           tickLine={false}
           tickCount={4}
@@ -140,7 +140,7 @@ const CustomXAxisTick = (props: any) => {
   }
 
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g transform={`translate(${x}, ${y})`}>
       <text x={0} y={0} dy={16} textAnchor="middle" fill="black" fontSize={14}>
         {date}
       </text>
@@ -154,11 +154,11 @@ const CustomYAxisTick = (props: any) => {
   const price = payload.value.toFixed(2);
 
   if (index === 0) {
-    return <Fragment>''</Fragment>;
+    return null;
   }
 
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g transform={`translate(${x}, ${y})`}>
       <text x={0} y={0} dy={5} textAnchor="end">
         {price}
       </text>

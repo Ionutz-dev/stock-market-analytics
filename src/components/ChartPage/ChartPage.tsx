@@ -18,7 +18,7 @@ const MarketChart = () => {
   const error = useAppSelector(state => state.chart.error);
 
   useEffect(() => {
-    // dispatch(fetchChartData({ currStock, currTimeRange }));
+    dispatch(fetchChartData({ currStock, currTimeRange }));
   }, [dispatch, currStock, currTimeRange]);
 
   let content = (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks';
 
 import {
   changeCurrStock,
@@ -14,12 +14,15 @@ interface typeOfProps {
 }
 
 const SelectMenu = (props: typeOfProps) => {
+  const dispatch = useAppDispatch();
+
+  const stockSymbol = useAppSelector(state => state.chart.currStock.symbol);
+  const range = useAppSelector(state => state.chart.currTimeRange.range);
+
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(
-    props.title === 'Stock' ? 'AAPL' : '1mo'
+    props.title === 'Stock' ? stockSymbol : range
   );
-
-  const dispatch = useDispatch();
 
   const toggleOpenHandler = () => {
     setOpen(!open);

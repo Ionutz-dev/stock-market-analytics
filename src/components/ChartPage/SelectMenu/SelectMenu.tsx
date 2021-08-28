@@ -21,7 +21,7 @@ const SelectMenu = (props: typeOfProps) => {
 
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(
-    props.title === 'Stock' ? stockSymbol : range
+    props.title === 'Stock' ? stockSymbol : range.toUpperCase()
   );
 
   const toggleOpenHandler = () => {
@@ -29,12 +29,15 @@ const SelectMenu = (props: typeOfProps) => {
   };
 
   const selectHandler = (option: string) => {
-    setSelected(option);
+    setSelected(option.toUpperCase());
 
     if (props.title === 'Range') {
       let range = option,
         interval = '1d';
+
       if (range === '1d') interval = '15m';
+      if (range === '5y') interval = '1wk';
+      if (range === 'max') interval = '1mo';
 
       dispatch(changeCurrRange({ range: range, interval: interval }));
     }
@@ -84,7 +87,7 @@ const SelectMenu = (props: typeOfProps) => {
             data-value={option.toLowerCase()}
             onClick={() => selectHandler(option)}
           >
-            {option}
+            {option.toUpperCase()}
           </span>
         );
       })}

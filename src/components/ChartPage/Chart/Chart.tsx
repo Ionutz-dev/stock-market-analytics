@@ -118,17 +118,29 @@ const CustomXAxisTick = (props: any) => {
 
   let date: string = '';
 
-  if (range === '5y') {
+  if (range === 'max') {
+    const firstYear = timestamps[2][0];
+
+    if (firstYear >= 2010) {
+      if (year !== prevYear && year % 2 === 0) date = String(year);
+    } else if (firstYear >= 2000) {
+      if (year !== prevYear && year % 4 === 0) date = String(year);
+    } else if (firstYear >= 1990) {
+      if (year !== prevYear && year % 6 === 0) date = String(year);
+    } else {
+      if (year !== prevYear && year % 8 === 0) date = String(year);
+    }
+  } else if (range === '5y') {
     if (year !== prevYear) date = String(year);
   } else if (range === '1y') {
     if (month !== prevMonth && month % 2 !== 0) {
       if (month === 1) date = String(year);
       else date = `${months[month - 1].split('').splice(0, 3).join('')}`;
     }
-  } else if (range === '6mo') {
+  } else if (range === '6m') {
     if (month !== prevMonth)
       date = `${months[month - 1].split('').splice(0, 3).join('')}`;
-  } else if (range === '1mo') {
+  } else if (range === '1m') {
     if (index % 5 === 0)
       date = `${months[month - 1].split('').splice(0, 3).join('')} ${day}`;
   } else if (range === '5d') {

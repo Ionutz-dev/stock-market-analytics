@@ -49,7 +49,7 @@ const MarketChart = () => {
         />
         <SelectMenu
           title={'Range'}
-          options={['1d', '5d', '1mo', '6mo', '1y', '5y']}
+          options={['1d', '5d', '1m', '6m', '1y', '5y', 'max']}
         />
       </div>
     </div>

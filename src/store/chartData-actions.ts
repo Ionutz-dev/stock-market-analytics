@@ -14,13 +14,23 @@ export const fetchChartData =
     const fetchData = async () => {
       const { currStock, currTimeRange } = fetchInfo;
 
+      let httpRange = '';
+
+      if (currTimeRange.range === '1m') {
+        httpRange = '1mo';
+      } else if (currTimeRange.range === '6m') {
+        httpRange = '6mo';
+      } else {
+        httpRange = currTimeRange.range;
+      }
+
       const response = await axios.request({
         method: 'GET',
         url: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-charts',
         params: {
           symbol: currStock.symbol,
           interval: currTimeRange.interval,
-          range: currTimeRange.range,
+          range: httpRange.toLowerCase(),
           region: 'US',
           comparisons: '^GDAXI,^FCHI',
         },
@@ -32,7 +42,7 @@ export const fetchChartData =
       });
 
       if (response.statusText !== 'OK') {
-        throw new Error("Chart data couldn' t be fetched");
+        throw new Error("Chart data couldn't be fetched");
       }
 
       const quotes = response.data.chart.result[0].indicators.quote[0].close;

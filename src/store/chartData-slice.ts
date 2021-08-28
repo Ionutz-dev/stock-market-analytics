@@ -17,7 +17,7 @@ const initialState: stateConfiguration = {
     symbol: 'AAPL',
   },
   currTimeRange: {
-    range: '1mo',
+    range: '1m',
     interval: '1d',
   },
   timestamps: [],

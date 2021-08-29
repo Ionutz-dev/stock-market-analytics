@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/stock-market-analytics/static/css/main.3bd9c003.chunk.css",
+    "main.js": "/stock-market-analytics/static/js/main.32b4f51e.chunk.js",
+    "main.js.map": "/stock-market-analytics/static/js/main.32b4f51e.chunk.js.map",
+    "runtime-main.js": "/stock-market-analytics/static/js/runtime-main.dd9fd7c3.js",
+    "runtime-main.js.map": "/stock-market-analytics/static/js/runtime-main.dd9fd7c3.js.map",
+    "static/js/2.dae9f74c.chunk.js": "/stock-market-analytics/static/js/2.dae9f74c.chunk.js",
+    "static/js/2.dae9f74c.chunk.js.map": "/stock-market-analytics/static/js/2.dae9f74c.chunk.js.map",
+    "static/js/3.15751b84.chunk.js": "/stock-market-analytics/static/js/3.15751b84.chunk.js",
+    "static/js/3.15751b84.chunk.js.map": "/stock-market-analytics/static/js/3.15751b84.chunk.js.map",
+    "static/css/4.706b3a7c.chunk.css": "/stock-market-analytics/static/css/4.706b3a7c.chunk.css",
+    "static/js/4.e3f2cda1.chunk.js": "/stock-market-analytics/static/js/4.e3f2cda1.chunk.js",
+    "static/js/4.e3f2cda1.chunk.js.map": "/stock-market-analytics/static/js/4.e3f2cda1.chunk.js.map",
+    "static/css/5.e55b6399.chunk.css": "/stock-market-analytics/static/css/5.e55b6399.chunk.css",
+    "static/js/5.49acb624.chunk.js": "/stock-market-analytics/static/js/5.49acb624.chunk.js",
+    "static/js/5.49acb624.chunk.js.map": "/stock-market-analytics/static/js/5.49acb624.chunk.js.map",
+    "static/js/6.fc538036.chunk.js": "/stock-market-analytics/static/js/6.fc538036.chunk.js",
+    "static/js/6.fc538036.chunk.js.map": "/stock-market-analytics/static/js/6.fc538036.chunk.js.map",
+    "index.html": "/stock-market-analytics/index.html",
+    "static/css/4.706b3a7c.chunk.css.map": "/stock-market-analytics/static/css/4.706b3a7c.chunk.css.map",
+    "static/css/5.e55b6399.chunk.css.map": "/stock-market-analytics/static/css/5.e55b6399.chunk.css.map",
+    "static/css/main.3bd9c003.chunk.css.map": "/stock-market-analytics/static/css/main.3bd9c003.chunk.css.map",
+    "static/js/2.dae9f74c.chunk.js.LICENSE.txt": "/stock-market-analytics/static/js/2.dae9f74c.chunk.js.LICENSE.txt",
+    "static/js/3.15751b84.chunk.js.LICENSE.txt": "/stock-market-analytics/static/js/3.15751b84.chunk.js.LICENSE.txt",
+    "static/media/LandingPage.module.css": "/stock-market-analytics/static/media/background.5a537229.jpg",
+    "static/media/logo_transparent.3d40d372.png": "/stock-market-analytics/static/media/logo_transparent.3d40d372.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd9fd7c3.js",
+    "static/js/3.15751b84.chunk.js",
+    "static/css/main.3bd9c003.chunk.css",
+    "static/js/main.32b4f51e.chunk.js"
+  ]
+}

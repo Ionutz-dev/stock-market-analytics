@@ -23,6 +23,12 @@
   height: 105%;
 }
 
+@media (max-width: 800px) {
+  .Toolbar {
+    height: 70px;
+  }
+}
+
 @media (max-width: 600px) {
   .DesktopOnly {
     display: none;

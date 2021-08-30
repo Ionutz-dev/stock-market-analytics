@@ -39,7 +39,7 @@
 @media (max-width: 700px) {
   .LoadingSpinner {
     top: 73%;
-    left: 50%;
+    left: 47%;
   }
 }
 
@@ -51,6 +51,6 @@
   }
 
   .LoadingSpinner {
-    top: 62%;
+    top: 68%;
   }
 }

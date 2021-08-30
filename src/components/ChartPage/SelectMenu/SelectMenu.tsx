@@ -21,7 +21,7 @@ const SelectMenu = (props: typeOfProps) => {
 
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(
-    props.title === 'Stock' ? stockSymbol : range.toUpperCase()
+    props.title === 'Stock' ? stockSymbol : range
   );
 
   const toggleOpenHandler = () => {
@@ -29,7 +29,7 @@ const SelectMenu = (props: typeOfProps) => {
   };
 
   const selectHandler = (option: string) => {
-    setSelected(option.toUpperCase());
+    setSelected(option);
 
     if (props.title === 'Range') {
       let range = option,
@@ -108,7 +108,7 @@ const SelectMenu = (props: typeOfProps) => {
           }
         >
           <div className={classes['custom-select__trigger']}>
-            <span>{selected}</span>
+            <span>{selected.toUpperCase()}</span>
             <div className={classes['arrow']}></div>
           </div>
           {options}

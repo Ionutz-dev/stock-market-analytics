@@ -33,7 +33,7 @@ table {
 .MenuContainer {
   text-align: center;
 
-  margin: 3rem 0 8.5rem 0;
+  /* margin: 3rem 0 8.5rem 0; */
 }
 
 .scrollable {
@@ -177,9 +177,9 @@ table {
 
 @media (max-width: 1000px) {
   .custom-select-wrapper {
-    width: 90%;
+    width: 70%;
 
-    left: 5%;
+    left: 17%;
   }
 
   .arrow::after {
@@ -200,17 +200,12 @@ table {
 }
 
 @media (max-width: 700px) {
-  .MenuContainer {
-    margin: 2.5rem 0 2rem 0;
-  }
-
   .Title {
     font-size: 1.5em;
   }
 
   .custom-select-wrapper {
     width: 7rem;
-
     left: 0%;
   }
 
@@ -239,11 +234,5 @@ table {
 
   .open .arrow::after {
     left: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .MenuContainer {
-    margin: 1.5rem 0 2rem 0;
   }
 }

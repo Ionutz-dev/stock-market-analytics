@@ -41,16 +41,17 @@ const MarketChart = () => {
     <div className={classes.MarketContainer}>
       <div className={classes.LeftContainer}></div>
       {content}
-      <div className={classes.InfoContainer}></div>
-      <div className={classes.InfoZone}>
-        <SelectMenu
-          title={'Stock'}
-          options={['AAPL', 'AMZN', 'FB', 'GOOGL', 'MSFT', 'NFLX', 'TSLA']}
-        />
-        <SelectMenu
-          title={'Range'}
-          options={['1d', '5d', '1m', '6m', '1y', '5y', 'max']}
-        />
+      <div className={classes.InfoContainer}>
+        <div className={classes.InfoZone}>
+          <SelectMenu
+            title={'Stock'}
+            options={['AAPL', 'AMZN', 'FB', 'GOOGL', 'MSFT', 'NFLX', 'TSLA']}
+          />
+          <SelectMenu
+            title={'Range'}
+            options={['1d', '5d', '1m', '6m', '1y', '5y', 'max']}
+          />
+        </div>
       </div>
     </div>
   );

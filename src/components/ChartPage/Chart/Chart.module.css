@@ -22,17 +22,17 @@
 .LoadingSpinner {
   position: absolute;
   left: 40%;
-  top: 57%;
+  top: 60%;
   transform: translate(-50%, -50%);
 }
 
 @media (max-width: 900px) {
   .Chart {
-    height: 75%;
+    height: 60%;
   }
 
   .LoadingSpinner {
-    left: 39%;
+    left: 48%;
   }
 }
 
@@ -51,6 +51,12 @@
   }
 
   .LoadingSpinner {
-    top: 68%;
+    top: 72%;
+  }
+}
+
+@media (max-width: 500px) {
+  .LoadingSpinner {
+    top: 70%;
   }
 }

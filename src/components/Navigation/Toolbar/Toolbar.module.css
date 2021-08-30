@@ -4,14 +4,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* background-color: #24252a; */
-  /* background-color: transparent; */
-  /* background: rgb(36, 37, 42);
-  background: linear-gradient(
-    155deg,
-    rgba(36, 37, 42, 1) 6%,
-    rgba(14, 14, 43, 1) 91%
-  ); */
   background-color: #111;
   display: flex;
   justify-content: space-between;
@@ -27,12 +19,16 @@
 }
 
 .Logo {
-  margin-top: -8px;
+  margin-top: -14px;
   height: 105%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .DesktopOnly {
     display: none;
+  }
+
+  .Toolbar {
+    height: 65px;
   }
 }

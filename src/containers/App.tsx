@@ -12,22 +12,23 @@ const ChartPage = React.lazy(() => import('../components/ChartPage/ChartPage'));
 
 function App() {
   return (
-    <div className="centered">
-      <Layout>
-        <Suspense
-          fallback={
-            <div className="centered">
-              <LoadingSpinner />
-            </div>
-          }
-        >
-          <Switch>
-            <Route path="/market-charts" component={ChartPage} />
-            <Route path="/" component={LandingPage} />
-          </Switch>
-        </Suspense>
-      </Layout>
-    </div>
+    <Layout>
+      <Suspense
+        fallback={
+          <div className="centered">
+            <LoadingSpinner />
+          </div>
+        }
+      >
+        <Switch>
+          <Route
+            path="/stock-market-analytics/stock-market"
+            component={ChartPage}
+          />
+          <Route path="/stock-market-analytics" component={LandingPage} />
+        </Switch>
+      </Suspense>
+    </Layout>
   );
 }
 

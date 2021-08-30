@@ -11,22 +11,12 @@ const landingPage = () => {
         <div className={classes.Left}>
           <div className={classes.InfoContainer}>
             <div
-              style={{
-                color: '#CDCDCD',
-                fontWeight: 700,
-                textAlign: 'left',
-              }}
+              className={classes.TitleUp}
             >
               STOCK MARKET
             </div>
             <div
-              style={{
-                marginTop: '2px',
-                marginLeft: '0px',
-                marginBottom: '50px',
-                textAlign: 'left',
-              }}
-              className={classes.Analytics}
+              className={classes.TitleDown}
             >
               ANALYTICS
             </div>
@@ -35,7 +25,10 @@ const landingPage = () => {
               Watch live charts of the most popular stocks and get into the
               world of trading
             </div>
-            <NavLink to="/market-charts" className={classes.Start}>
+            <NavLink
+              to="/stock-market-analytics/stock-market"
+              className={classes.StartBtn}
+            >
               GET STARTED
             </NavLink>
           </div>

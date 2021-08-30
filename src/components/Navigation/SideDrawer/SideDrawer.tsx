@@ -24,7 +24,7 @@ const sideDrawer = (props: propsType) => {
       <div className={attachedClasses.join(' ')} onClick={props.closed}>
         <NavLink
           exact
-          to="/"
+          to="/stock-market-analytics/"
           activeClassName={classes.active}
           className={classes.link}
         >
@@ -32,7 +32,7 @@ const sideDrawer = (props: propsType) => {
         </NavLink>
         <NavLink
           exact
-          to="/market-charts"
+          to="/stock-market-analytics/stock-market"
           activeClassName={classes.active}
           className={classes.link}
         >

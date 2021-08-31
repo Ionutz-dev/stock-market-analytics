@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 
 import classes from './ChartPage.module.css';
@@ -6,7 +6,7 @@ import classes from './ChartPage.module.css';
 import Chart from './Chart/Chart';
 import SelectMenu from './SelectMenu/SelectMenu';
 
-import { fetchChartData } from '../../store/chartData-actions';
+import { fetchChartData, updateSizes } from '../../store/chartData-actions';
 
 const MarketChart = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +20,20 @@ const MarketChart = () => {
   useEffect(() => {
     dispatch(fetchChartData({ currStock, currTimeRange }));
   }, [dispatch, currStock, currTimeRange]);
+
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      dispatch(
+        updateSizes({ height: window.innerHeight, width: window.innerWidth })
+      );
+    };
+
+    window.addEventListener('resize', updateSize);
+
+    updateSize();
+
+    return () => window.removeEventListener('resize', updateSize);
+  });
 
   let content = (
     <div className={classes.ChartZone}>

@@ -4,6 +4,7 @@ interface stateConfiguration {
   chartData: { date: string; price: number }[] | [];
   currStock: { name: string; symbol: string };
   currTimeRange: { range: string; interval: string };
+  sizes: { pageHeight: number | string; pageWidth: number | string };
   timestamps: number[][];
   stockPrice: number | null;
   isLoading: boolean;
@@ -19,6 +20,10 @@ const initialState: stateConfiguration = {
   currTimeRange: {
     range: '1m',
     interval: '1d',
+  },
+  sizes: {
+    pageHeight: '',
+    pageWidth: '',
   },
   timestamps: [],
   stockPrice: null,
@@ -54,6 +59,12 @@ const chartSlice = createSlice({
       state.currTimeRange = {
         range: action.payload.range,
         interval: action.payload.interval,
+      };
+    },
+    setSizes(state, action: PayloadAction<{ height: number; width: number }>) {
+      state.sizes = {
+        pageHeight: action.payload.height,
+        pageWidth: action.payload.width,
       };
     },
     setTimestamps(state, action: PayloadAction<{ timestamps: number[][] }>) {

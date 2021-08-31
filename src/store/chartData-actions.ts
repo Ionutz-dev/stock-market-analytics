@@ -182,3 +182,17 @@ export const changeCurrRange = (timeData: {
     );
   };
 };
+
+export const updateSizes = (sizes: {
+  height: number;
+  width: number;
+}): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return dispatch => {
+    dispatch(
+      chartActions.setSizes({
+        height: sizes.height,
+        width: sizes.width,
+      })
+    );
+  };
+};

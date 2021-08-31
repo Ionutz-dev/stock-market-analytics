@@ -33,6 +33,9 @@ const Chart = () => {
   const chartData = useAppSelector(state => state.chart.chartData);
   const timestamps = useAppSelector(state => state.chart.timestamps);
   const range = useAppSelector(state => state.chart.currTimeRange.range);
+  const { pageHeight, pageWidth } = useAppSelector(state => state.chart.sizes);
+
+  console.log(pageHeight, pageWidth);
 
   if (chartData.length === 0 || timestamps.length === 0) {
     return (
@@ -50,7 +53,7 @@ const Chart = () => {
         data={chartData}
         margin={{
           top: 33,
-          right: 27,
+          right: 25,
           left: 20,
           bottom: 20,
         }}
@@ -75,7 +78,14 @@ const Chart = () => {
           dataKey="date"
           axisLine={false}
           tickLine={false}
-          tick={<CustomXAxisTick dateRange={range} timestamps={timestamps} />}
+          tick={
+            <CustomXAxisTick
+              dateRange={range}
+              timestamps={timestamps}
+              pageHeight={pageHeight}
+              pageWidth={pageWidth}
+            />
+          }
           interval={0}
         />
 
@@ -97,7 +107,15 @@ const Chart = () => {
 };
 
 const CustomXAxisTick = (props: any) => {
-  const { x, y, payload, dateRange: range, timestamps } = props;
+  const {
+    x,
+    y,
+    payload,
+    dateRange: range,
+    timestamps,
+    pageHeight,
+    pageWidth,
+  } = props;
   const { value: valueOfDate, index } = payload;
 
   let day: number = 0,
@@ -131,7 +149,11 @@ const CustomXAxisTick = (props: any) => {
       if (year !== prevYear && year % 8 === 0) date = String(year);
     }
   } else if (range === '5y') {
-    if (year !== prevYear) date = String(year);
+    if (pageWidth <= 1000) {
+      if (year !== prevYear && index !== 0) date = String(year);
+    } else {
+      if (year !== prevYear) date = String(year);
+    }
   } else if (range === '1y') {
     if (month !== prevMonth && month % 2 !== 0) {
       if (month === 1) date = String(year);
@@ -146,7 +168,13 @@ const CustomXAxisTick = (props: any) => {
   } else if (range === '5d') {
     date = `${months[month - 1].split('').splice(0, 3).join('')} ${day}`;
   } else if (range === '1d') {
-    if (valueOfDate.split(':')[1].split(' ')[0] === '00') date = valueOfDate;
+    const [minute, seconds] = valueOfDate.split(' ')[0].split(':');
+
+    if (pageWidth < 700) {
+      if (Number(minute) % 2 !== 0 && seconds === '00') date = valueOfDate;
+    } else {
+      if (seconds === '00') date = valueOfDate;
+    }
   }
 
   return (

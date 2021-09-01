@@ -6,20 +6,12 @@ import classes from './NavigationItems.module.css';
 const navigationItems = () => (
   <ul className={classes.NavigationItems}>
     <li className={classes.NavigationItem}>
-      <NavLink
-        exact
-        activeClassName={classes.active}
-        to="/stock-market-analytics/"
-      >
+      <NavLink exact activeClassName={classes.active} to="/">
         Home Page
       </NavLink>
     </li>
     <li className={classes.NavigationItem}>
-      <NavLink
-        activeClassName={classes.active}
-        exact
-        to="/stock-market-analytics/stock-market"
-      >
+      <NavLink activeClassName={classes.active} exact to="/stock-market">
         Stock Charts
       </NavLink>
     </li>

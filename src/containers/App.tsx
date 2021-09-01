@@ -21,11 +21,8 @@ function App() {
         }
       >
         <Switch>
-          <Route
-            path="/stock-market-analytics/stock-market"
-            component={ChartPage}
-          />
-          <Route path="/stock-market-analytics" component={LandingPage} />
+          <Route path="/stock-market/" component={ChartPage} />
+          <Route path="/" component={LandingPage} />
         </Switch>
       </Suspense>
     </Layout>

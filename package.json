@@ -1,6 +1,6 @@
 {
   "name": "stock-market",
-  "homepage": "https://ionutz-dev.github.io/stock-market-analytics",
+  "homepage": "https://ionutz-dev.github.io/stock-market-analytics/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

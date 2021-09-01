@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from '../hoc/Layout/Layout';
 import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';

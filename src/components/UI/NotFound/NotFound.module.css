@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.ErrorPage {
+  font-family: 'Montserrat', sans-serif;
+
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.ErrorHeading {
+  font-weight: 700;
+  font-size: calc(60px + (90 - 60) * ((100vw - 300px) / (1600 - 300)));
+  margin-bottom: 0;
+}
+
+.ErrorText {
+  font-size: calc(17px + (25 - 17) * ((100vw - 300px) / (1600 - 300)));
+  margin: 0;
+  text-align: center;
+
+  max-width: 70%;
+}
+
+.ErrorBtn {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.7em 1.6em;
+  border: 0.15em solid #000;
+  margin: 0 0.5em 0.2em 0;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
+  color: #000000;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  background-color: #c5dde7;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.ErrorBtn:hover {
+  text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #69abc4;
+}
+
+@media all and (max-width: 30em) {
+  .ErrorBtn {
+    display: block;
+    margin: 0.4em auto;
+  }
+}

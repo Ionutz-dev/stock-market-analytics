@@ -9,6 +9,7 @@ const LandingPage = React.lazy(
   () => import('../components/LandingPage/LandingPage')
 );
 const ChartPage = React.lazy(() => import('../components/ChartPage/ChartPage'));
+const NotFound = React.lazy(() => import('../components/UI/NotFound/NotFound'));
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         }
       >
         <Switch>
-          <Route path="/stock-market/" component={ChartPage} />
-          <Route path="/" component={LandingPage} />
+          <Route exact path="/stock-market/" component={ChartPage} />
+          <Route exact path="/" component={LandingPage} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Suspense>
     </Layout>

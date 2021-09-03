@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/stock-market-analytics/static/css/main.bb94ca58.chunk.css",
-    "main.js": "/stock-market-analytics/static/js/main.fd04bbb8.chunk.js",
-    "main.js.map": "/stock-market-analytics/static/js/main.fd04bbb8.chunk.js.map",
-    "runtime-main.js": "/stock-market-analytics/static/js/runtime-main.6ef64c31.js",
-    "runtime-main.js.map": "/stock-market-analytics/static/js/runtime-main.6ef64c31.js.map",
+    "main.js": "/stock-market-analytics/static/js/main.59b05cb0.chunk.js",
+    "main.js.map": "/stock-market-analytics/static/js/main.59b05cb0.chunk.js.map",
+    "runtime-main.js": "/stock-market-analytics/static/js/runtime-main.12cd4991.js",
+    "runtime-main.js.map": "/stock-market-analytics/static/js/runtime-main.12cd4991.js.map",
     "static/js/2.dae9f74c.chunk.js": "/stock-market-analytics/static/js/2.dae9f74c.chunk.js",
     "static/js/2.dae9f74c.chunk.js.map": "/stock-market-analytics/static/js/2.dae9f74c.chunk.js.map",
     "static/js/3.ef41dd8f.chunk.js": "/stock-market-analytics/static/js/3.ef41dd8f.chunk.js",
     "static/js/3.ef41dd8f.chunk.js.map": "/stock-market-analytics/static/js/3.ef41dd8f.chunk.js.map",
     "static/css/4.0553b16e.chunk.css": "/stock-market-analytics/static/css/4.0553b16e.chunk.css",
-    "static/js/4.5cc6aaff.chunk.js": "/stock-market-analytics/static/js/4.5cc6aaff.chunk.js",
-    "static/js/4.5cc6aaff.chunk.js.map": "/stock-market-analytics/static/js/4.5cc6aaff.chunk.js.map",
-    "static/css/5.bd84b2b6.chunk.css": "/stock-market-analytics/static/css/5.bd84b2b6.chunk.css",
+    "static/js/4.953b902e.chunk.js": "/stock-market-analytics/static/js/4.953b902e.chunk.js",
+    "static/js/4.953b902e.chunk.js.map": "/stock-market-analytics/static/js/4.953b902e.chunk.js.map",
+    "static/css/5.3e60fb86.chunk.css": "/stock-market-analytics/static/css/5.3e60fb86.chunk.css",
     "static/js/5.00e38fb1.chunk.js": "/stock-market-analytics/static/js/5.00e38fb1.chunk.js",
     "static/js/5.00e38fb1.chunk.js.map": "/stock-market-analytics/static/js/5.00e38fb1.chunk.js.map",
     "static/js/6.fc538036.chunk.js": "/stock-market-analytics/static/js/6.fc538036.chunk.js",
     "static/js/6.fc538036.chunk.js.map": "/stock-market-analytics/static/js/6.fc538036.chunk.js.map",
     "index.html": "/stock-market-analytics/index.html",
     "static/css/4.0553b16e.chunk.css.map": "/stock-market-analytics/static/css/4.0553b16e.chunk.css.map",
-    "static/css/5.bd84b2b6.chunk.css.map": "/stock-market-analytics/static/css/5.bd84b2b6.chunk.css.map",
+    "static/css/5.3e60fb86.chunk.css.map": "/stock-market-analytics/static/css/5.3e60fb86.chunk.css.map",
     "static/css/main.bb94ca58.chunk.css.map": "/stock-market-analytics/static/css/main.bb94ca58.chunk.css.map",
     "static/js/2.dae9f74c.chunk.js.LICENSE.txt": "/stock-market-analytics/static/js/2.dae9f74c.chunk.js.LICENSE.txt",
     "static/js/3.ef41dd8f.chunk.js.LICENSE.txt": "/stock-market-analytics/static/js/3.ef41dd8f.chunk.js.LICENSE.txt",
@@ -27,9 +27,9 @@
     "static/media/logo_transparent.3d40d372.png": "/stock-market-analytics/static/media/logo_transparent.3d40d372.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.6ef64c31.js",
+    "static/js/runtime-main.12cd4991.js",
     "static/js/3.ef41dd8f.chunk.js",
     "static/css/main.bb94ca58.chunk.css",
-    "static/js/main.fd04bbb8.chunk.js"
+    "static/js/main.59b05cb0.chunk.js"
   ]
 }

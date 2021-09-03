@@ -187,7 +187,7 @@ Overlay {
   }
 
   .InfoContainer {
-    font-size: 1.5em;
+    font-size: 1.6em;
     width: 60%;
 
     margin: 80px 0px 0px 60px;
@@ -207,7 +207,7 @@ Overlay {
     margin-top: 60px;
 
     padding: 16px 32px;
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
